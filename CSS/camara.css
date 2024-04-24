@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.video-container {
+    position: relative;
+}
+.video-container video {
+    border: 2px solid black;
+    width: 100%;
+    height: auto;
+}
+.video-container canvas {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.effect-invert {
+    filter: invert(100%);
+}
+.effect-grayscale {
+    filter: grayscale(100%);
+}
+.effect-rose {
+    filter: hue-rotate(330deg);
+}
+/* Otros efectos de distorsión */
+.effect-distort1 {
+    filter: blur(5px);
+}
+.effect-distort2 {
+    filter: contrast(150%);
+}
+.effect-distort3 {
+    filter: saturate(200%);
+}
+.effect-shadow {
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+.effect-hue {
+    filter: hue-rotate(90deg);
+
+}
+.effect-satu {
+    filter: saturate(500%);
+}

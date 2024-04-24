@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('https://th.bing.com/th/id/R.8b7c1840daa8b9b2346b85444b4df4dc?rik=1ZdLWRdOG2xqzw&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 700px;
+    color: white;
+}
+
+
+button {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input {
+    height: 30px;
+    width: 200px;
+    margin-bottom: 14px;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+button {
+
+    background-color: rgba(255, 0, 255, 0.871);
+    color: black;
+    border-color: #000000;
+}
+
+button:hover {
+    background-color: rgb(149, 52, 179);
+    border-color: rgb(0, 0, 0);
+    color:black
+}
+
+button:focus,
+button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+button:disabled,
+button:disabled:hover,
+button:disabled:focus,
+button:disabled:active {
+    background-color: #c0c0c0;
+    border-color: #a9a9a9;
+    cursor: not-allowed;
+}

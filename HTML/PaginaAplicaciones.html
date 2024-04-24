@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/CSS/PaginaAplicaciones.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+  <title>JUEGOS</title>
+  <style>
+    /* Posicionamiento de los botones */
+    .btn-corner {
+      position: absolute;
+      z-index: 1000;
+    }
+    .btn-top-left {
+      top: 10px;
+      left: 10px;
+    }
+    .btn-top-right {
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="videoFondo">
+    <source src="/IMG/fondo juegos.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
+  
+  <header>
+    <sup>ASIX I</sup>
+    <h1><i>P4G1N4</i> <i>D3</i> <i>JU3G0S</i></h1>
+  </header>
+
+  <!-- Botones para la navegación y pantalla completa -->
+  <div>
+    <a href="/HTML/PaginaPrincipal.html" class="btn btn-primary btn-corner btn-top-left">
+      <i class="bi bi-house-door-fill"></i> Página Principal
+    </a>
+    <button onclick="toggleFullScreen()" class="btn btn-secondary btn-corner btn-top-right">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707m0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707m-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707"/>
+      </svg> Pantalla Completa
+    </button>
+  </div>
+  <!-- Contenido de la página -->
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+        </div>
+    </div>
+  </div>
+
+  <!-- Cartas de juegos -->
+  <main>
+    <div class="panel_1">
+      <!-- Cartas de Juegos -->
+      <!-- Carta de Juego 1 -->
+      <div class="card1">
+        <div class="card-border-top"></div>
+        <div class="img"></div>
+        <span>RETRO PAINT</span>
+        <div class="stars">
+          <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </div>
+        <button><a href="/APLICACIONES/paintAplicaciones.html">ENTRAR</a></button>
+      </div>
+
+      <!-- Carta de Juego 2 -->
+      <div class="card1">
+        <div class="card-border-top"></div>
+        <div class="img"></div>
+        <span>SALON DE BELLEZA</span>
+        <div class="stars">
+          <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </div>
+        <button><a href="/APLICACIONES/camara.html">JUGAR</a></button>
+      </div>
+
+      <!-- Carta de Juego 3 -->
+      <div class="card1">
+        <div class="card-border-top"></div>
+        <div class="img"></div>
+        <span>R FLAP</span>
+        <div class="stars">
+          <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </div>
+        <button><a href="JUGAR">JUGAR</a></button>
+      </div>
+
+      <!-- Carta de Juego 4 -->
+      <div class="card1">
+        <div class="card-border-top"></div>
+        <div class="img"></div>
+        <span>R FLAP</span>
+        <div class="stars">
+          <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </div>
+        <button><a href="JUGAR">JUGAR</a></button>
+      </div>
+    </div>
+  
+  
+    <div class="panel_1">
+      <!-- Carta de Juego 5 -->
+      <div class="card1">
+        <div class="card-border-top"></div>
+        <div class="img"></div>
+        <span>R FLAP</span>
+        <div class="stars">
+          <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </div>
+        <button><a href="JUGAR">JUGAR</a></button>
+      </div>
+
+      <!-- Carta de Juego 6 -->
+      <div class="card1">
+        <div class="card-border-top"></div>
+        <div class="img"></div>
+        <span>R FLAP</span>
+        <div class="stars">
+          <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </div>
+        <button><a href="JUGAR">JUGAR</a></button>
+      </div>
+    </div>
+  </main>
+  <!--Script para el botton de pantallacompleta-->
+  <script>
+    function toggleFullScreen() {
+      var elem = document.documentElement;
+      if (!document.fullscreenElement && !document.mozFullScreenElement &&
+        !document.webkitFullscreenElement && !document.msFullscreenElement) {
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    }
+  </script>
+  <!-- Script de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

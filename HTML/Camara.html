@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros de Cámara</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 900px;
+            padding: 10px;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://th.bing.com/th/id/R.b6739314f079f8f283285c86d87487d3?rik=ZIEb0nbGwtFNAQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fQvB1b5a.jpg&ehk=CzzdsRlwtpuFJ3F7pcJxp52dV%2bnLa%2bAJpn0Gm%2bffNLU%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* Asegura que el fondo esté detrás del contenido */
+        }
+        .title {
+            grid-column: 1 / -1; /* Ocupa todas las columnas */
+            text-align: center;
+            font-size: 100px;
+            margin-bottom: 20px;
+            color: #f80a0a;
+            border:4px, black;
+            font-family: "Protest Revolution", sans-serif;
+            
+            text-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        .video-container {
+            position: relative;
+            border: 2px solid black;
+            overflow: hidden;
+            border-radius: 4px;
+            background-color: #ff0404;
+            
+        }
+        .video-container video {
+            width: 100%;    
+            height: auto;
+            
+            
+        }
+        .capture-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            cursor: grab;
+            border-radius: 15px;
+        }
+        .effect-invert {
+            filter: invert(100%);
+        }
+        .effect-grayscale {
+            filter: grayscale(100%);
+        }
+        .effect-rose {
+            filter: hue-rotate(330deg);
+        }
+        /* Otros efectos de distorsión */
+        .effect-distort1 {
+            filter: blur(5px);
+        }
+        .effect-distort2 {
+            filter: contrast(150%);
+        }
+        .effect-distort3 {
+            filter: brightness(300%);
+        }
+        .effect-hue {
+            filter: hue-rotate(90deg);
+
+        }
+        .effect-satu {
+            filter: saturate(500%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background-image"></div> <!-- Fondo de imagen -->
+        <h1 class="title">Salón de Belleza</h1>
+        <!-- Primeras seis cámaras con efectos específicos -->
+        <div class="video-container">
+            <div class="effect-label">Invertir</div>
+            <video autoplay class="effect-invert"></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+        <div class="video-container">
+            <div class="effect-label">Escala de grises</div>
+            <video autoplay class="effect-grayscale"></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+        <div class="video-container">
+            <div class="effect-label">Rosado</div>
+            <video autoplay class="effect-rose"></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+        <div class="video-container">
+            <div class="effect-label">Saturacion</div>
+            <video autoplay class="effect-satu"></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+        <div class="video-container">
+            <div class="effect-label">HACHE DE</div>
+            <video autoplay class="distort2"></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+        <div class="video-container">
+            <div class="effect-label">Rayos de sol</div>
+            <video autoplay class="effect-distort3"></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+        <div class="video-container">
+            <div class="effect-label">Desenfoque</div>
+            <video autoplay class="effect-distort1"></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+        <!-- Tres cámaras adicionales -->
+       
+        <div class="video-container">
+            <div class="effect-label">888</div>
+            <video autoplay class="effect-hue"></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+        <div class="video-container">
+            <div class="effect-label">Esta es normal</div>
+            <video></video>
+            <button class="capture-btn" onclick="capturePhoto(this)">Capturar</button>
+        </div>
+    </div>
+
+
+        <script>
+            async function initializeCameras() {
+                const videoContainers = document.querySelectorAll('.video-container');
+                for (let container of videoContainers) {
+                    const video = container.querySelector('video');
+                    try {
+                        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                        video.srcObject = stream;
+                        video.play();
+                    } catch (err) {
+                        console.error("Error: ", err);
+                    }
+                }
+            }
+        
+            function capturePhoto(button) {
+                const container = button.parentNode;
+                const video = container.querySelector('video');
+                const canvas = document.createElement('canvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                const context = canvas.getContext('2d');
+                // Aplicar el mismo filtro al canvas
+                context.filter = window.getComputedStyle(video).filter;
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const dataURL = canvas.toDataURL('image/png');
+                // Aquí puedes hacer lo que desees con la imagen, por ejemplo, descargarla:
+                const link = document.createElement('a');
+                link.href = dataURL;
+                link.download = 'captured_photo.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        
+            initializeCameras();
+        </script>
+        
+</body>
+</html>

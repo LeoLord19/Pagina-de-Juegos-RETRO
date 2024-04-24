@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/CSS/PaginaJuegos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+  <title>JUEGOS</title>
+  <style>
+    /* Posicionamiento de los botones */
+    .btn-corner {
+      position: absolute;
+      z-index: 1000;
+    }
+    .btn-top-left {
+      top: 10px;
+      left: 10px;
+    }
+    .btn-top-right {
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="videoFondo">
+    <source src="/IMG/fondo juegos.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
+  
+  <header>
+    <sup>ASIX I</sup>
+    <h1><i>GU3SS</i> <i>TH3</i> <i>NUMBER</i></h1>
+  </header>
+
+  <!-- Botones para la navegación y pantalla completa -->
+  <div>
+    <a href="/HTML/PaginaJuegos.html" class="btn btn-primary btn-corner btn-top-left">
+      <i class="bi bi-house-door-fill"></i> P4gin4 d3 ju3g0s
+    </a>
+    <a onclick="toggleFullScreen()" class="btn btn-secondary btn-corner btn-top-right">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707m0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707m-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707"/>
+      </svg> P4nt4ll4 C0mpl3t4
+    </a>
+  </div>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/CSS/suerte.css">
+      <title>Tengo Suerte</title>
+  </head>
+  <body>
+      <div class="container">
+          
+          <p>Elige un némero del 1 al 100.</p>
+          <input type="number" id="guessInput" min="1" max="100">
+          <button id="guessButton">Respuesta</button>
+          <button id="guessButton" onclick="window.location.reload()">Reiniciar</button>
+  
+          <p id="result"></p>
+          <p id="attempts"></p>
+      </div>
+  
+      <script src="/JS/suerte.js"></script>
+  </body>
+  <script>
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+          document.documentElement.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { /* Firefox */
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE/Edge */
+          document.msExitFullscreen();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+

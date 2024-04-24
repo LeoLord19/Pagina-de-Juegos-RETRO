@@ -1,0 +1,413 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Previene desbordamiento extra causado por el video */
+}
+
+#overlay {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(128, 0, 128, 0.5); /* Color lila semitransparente */
+    z-index: 1; /* Asegura que la superposición esté sobre el video pero debajo del contenido */
+}
+
+#videoFondo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; /* Asegura que el video quede detrás de todo el contenido */
+    object-fit: cover;
+}
+
+
+.contenido {
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+#span{
+    font-family: Micro 5;
+
+}
+
+a{
+    text-align: center;
+    font-family: 'Micro 5', cursive, system-ui;
+	font-size: 40px;
+	margin-bottom: var(--spacing-half);
+	text-transform: uppercase;
+	color: #fff;
+	position: relative;
+    color: #000;
+}
+.img{
+    background-size: cover;
+    width:70%;
+    border-radius: 15px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+
+}
+h1 {
+    margin: 0;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para resaltar */
+}
+
+
+main {
+    padding: 20px;
+}
+
+.panel_1 {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    margin-top: -15px;
+    gap: 70px;
+}
+
+.card1 {
+    background-color: rgb(0, 0, 0);
+    width: 390px; /* de 250px a 230px */
+    height: 490px; /* de 300px a 280px */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 2px 2px 19px;
+    margin: 20px; 
+    margin-bottom: -20px;
+    margin-top: 20px;
+}
+.card1::before {
+    content: "";
+    position: absolute;
+    z-index: -19;
+    width: 405px;
+    height: 505px;
+    margin: auto;
+    background: rgb(4,0,255);
+    background: linear-gradient(135deg, rgba(4,0,255,1) 0%, rgba(136,0,255,1) 35%, rgba(209,0,255,1) 100%);
+    border-radius: 6px;
+}
+
+.card1::after {
+    content: "";
+    position: absolute;
+    z-index: -19;
+    width: 262px;
+    height: 312px;
+    margin: auto;
+    background: rgb(4,0,255);
+    background: linear-gradient(135deg, rgba(4,0,255,1) 0%, rgba(136,0,255,1) 35%, rgba(209,0,255,1) 100%);
+    border-radius: 6px;
+    filter: blur(20px);
+    transition: 2s;
+}
+
+.card1:hover::after {
+    animation: cardafter 2.5s infinite forwards;
+}
+
+@keyframes cardafter {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilos adicionales para el contenido de la tarjeta */
+.card1 .imge img {
+    filter: grayscale(100%); /* Convertir la imagen a escala de grises */
+    transition: filter 0.5s; /* Agregar una transición suave */
+    scale: 75%;
+    margin-bottom: -70px;
+    margin-top: -100px;
+}
+  
+  .card1:hover .imge img {
+    filter: grayscale(0%); /* Quitar el filtro de escala de grises al hacer hover */
+  }
+
+.card1 span {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+@font-face {
+    font-family: 'PixelRetro';
+    src: url('pixel-retro-font.woff2') format('woff2'),
+         url('pixel-retro-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.card1 .stars {
+    margin-top: 1px;
+    color: gold;
+    font-family: 'PixelRetro', sans-serif; /* Usar la fuente pixelada */
+    font-size: 40px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8); /* Sombra de texto para efecto neón */
+    image-rendering: pixelated;
+}
+
+/* Keyframes para la animación de parpadeo */
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Aplicar un efecto de anti-aliasing para suavizar los bordes de la fuente pixelada */
+.pixelated {
+    image-rendering: pixelated; /* Firefox option */
+    image-rendering: -moz-crisp-edges; /* Firefox option */
+    image-rendering: crisp-edges; /* Safari option */
+    image-rendering: -webkit-crisp-edges; /* Chrome option */
+}
+
+.card1 button {
+    font-size: 30px; /* Tamaño de fuente más pequeño */
+    padding: 3px 30px; /* Padding vertical reducido, padding horizontal aumentado */
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #ffffff; /* Mismo borde que el de las cartas */
+    background: #000; /* Fondo negro */
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    transition: background-color 0.3s, border-color 0.3s; /* Transiciones suaves */
+}
+.card1 button:hover {
+    background: hsl(0, 0%, 100%); /* Cambio de color al pasar el ratón */
+    border-color: #000000; /* Cambio de color del borde al pasar el ratón */
+    
+}
+
+
+
+.header-buttons {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Ajuste el espaciado para adaptarse mejor al diseño */
+}
+
+.header-buttons button {
+    background-color: transparent;
+    border: none;
+    color: #3c3f8e;
+    font-size: 40px; /* Tamaño del icono */
+    cursor: pointer;
+}
+
+.header-buttons button:first-child::before {
+    content: '\25C0'; /* Triángulo hacia la izquierda */
+    border-width: 25px 25px 25px 0; /* Triángulo izquierdo */
+    border-color: transparent rgba(255, 255, 255, 0.9) transparent transparent; /* Color del triángulo */
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-buttons button:last-child::before {
+    content: '\25BA'; /* Triángulo hacia la derecha */
+    border-width: 25px 0 25px 25px; /* Triángulo derecho */
+    border-color: transparent transparent transparent rgba(111, 14, 14, 0.9); /* Color del triángulo */
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container {
+    margin-top: 5px; /* Ajuste el margen superior para evitar la superposición con el encabezado */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/*
+	The stuff that matters
+	Short reasoning: Application logic shouldn't mix with obvious config params.
+	-
+	see Chris Coyiers 'Expando Grid': https://codepen.io/chriscoyier/pen/GRYKObj
+*/
+
+
+/* 1. Define critical things here */
+:root {
+	--grid-columns: 5;
+	--grid-min-width: 250px;
+	--grid-gap: 2.5rem;
+}
+
+
+/* 2. Apply here */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--grid-min-width), 100% / calc(var(--grid-columns) + 1))), 1fr));
+  gap: var(--grid-gap);
+}
+
+
+/* ... and we're done ... */
+
+
+/* 
+	but wait -- couldn't we do more stuff?
+	...sure, let's use data-attributes and modify local CSS variables
+*/
+
+.grid[data-columns] {
+	
+	/* define */
+	&[data-columns="1"]{ --grid-columns: 1; }
+	&[data-columns="2"]{ --grid-columns: 2; }
+	&[data-columns="3"]{ --grid-columns: 3; }
+	&[data-columns="4"]{ --grid-columns: 4; }
+	&[data-columns="5"]{ --grid-columns: 5; }
+	&[data-columns="6"]{ --grid-columns: 6; }
+	
+	/* apply */
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--grid-min-width), 100% / calc(var(--grid-columns) + 1))), 1fr));
+}
+
+
+
+
+
+
+
+/*----------------------------------------
+
+	# MISC IRRELEVANT STYLING
+
+----------------------------------------*/
+
+.grid[data-columns]{
+	margin-bottom: var(--spacing-double);
+	> div { padding: var(--spacing); background: rgba(255,255,255,0.1); border-radius: 1rem; }
+}
+
+:root {
+	--spacing: 2rem;
+	--spacing-half: 1rem;
+	--spacing-double: 4rem;
+}
+
+
+/* reset: Josh's Custom CSS Reset @ https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,*::before,*::after,input,select,form{box-sizing:border-box}*{margin:0}html,body{height:100%}body{line-height:1.5;-webkit-font-smoothing:antialiased}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}
+
+body {
+	height: auto;
+  background: #111;
+  color: #fff8;
+  font: 300 100%/1.5 system-ui;
+  padding: 5svh;
+	background: linear-gradient(to top, hsl(260, 84%, 5%), hsl(260, 84%, 0%)); 
+	background-attachment: fixed;
+}
+
+body, html { min-height: 100%; }
+
+body {
+		&::before {
+		width: 100%; display: block; content: '';
+		height: .1rem;  position: absolute; top: 0; left: 0;
+		background: linear-gradient(to right, rgb(55,18,60), rgb(113,103,124), rgb(250,121,33));
+	}
+}
+
+
+/* irrelevant garbage */
+* { text-align: center; } /* :) */
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  color: #fff9;
+  line-height: 1.1;
+  letter-spacing: 0.06rem;
+	word-break: break-all;
+}
+
+h1 { 
+	font-family: 'Micro 5', cursive, system-ui;
+	font-size:80px;
+	text-transform: uppercase;
+	color: #fff;
+	position: relative;
+	z-index: 1;
+}
+
+h2 { margin: 0 0 var(--spacing-half); font-size: clamp(100%, calc(1vw + 1rem), 125%); }
+h3 {  margin: 0 0 var(--spacing); font-size: clamp(125%, calc(1vw + 1rem), 150%);  }
+
+/* dark voodoo stuff */
+sup {
+	text-transform: uppercase;
+	font-size: 70%;
+	color: rgba(255, 255, 255, 0.4);
+	letter-spacing: .15rem;
+	&:after, &:before {
+		display: inline-block;
+		content: '---------------';
+		word-break: none;
+		letter-spacing: -.1rem;
+		color: rgba(255, 255, 255, 0.3);
+	}
+	&:after { margin-left: .5rem; }
+	&:before { margin-right: .5rem; }
+}
+
+
+
+a{ color: currentcolor; text-underline-offset: .2rem; text-decoration: none; }
+a:hover, a:active, a:focus { color: rgb(166, 0, 255); }
+
+i { font-style: normal; }
+
+/* why not */
+@keyframes why-not {
+	0% { opacity: 1 }
+	90% { opacity: 1; text-shadow: 0 0 var(--spacing-double) currentcolor; }
+	95% { opacity: 0; text-shadow: 0 0 20rem currentcolor; transform: rotateX(0); }
+	100% { opacity: 1; text-shadow: 0 0 20rem currentcolor; transform: rotateX(25deg); }
+}
+
+h1 {
+	i:nth-child(1){ color: cyan; text-shadow: 0 0 var(--spacing-double) currentcolor; }
+	i:nth-child(2){ color: magenta; text-shadow: 0 0 var(--spacing-double) currentcolor; }
+	i:nth-child(3){ color: yellow; text-shadow: 0 0 var(--spacing-double) currentcolor;}
+	
+	i {
+		display: inline-block;
+		animation: why-not alternate 1s linear infinite;
+		&:nth-child(2){ animation-delay: 20ms; }
+		&:nth-child(3){ animation-delay: 40ms; }
+	}
+}
